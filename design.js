@@ -1,7 +1,8 @@
 const SQ = 20;
 const EMPTY = "#FFF";
 let board = [ ];
-var canvas = document.querySelector("#canvas")
+const cvs = document.getElementById("tetris");
+const ctx = cvs.getContext("2d");
 
 for ( let r = 0; r < 20; r++){
       board[r] = [ ];
