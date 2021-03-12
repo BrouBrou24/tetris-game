@@ -1,4 +1,5 @@
 const SQ = 20;
+const EMPTY = "#FFF";
 var canvas = document.querySelector("#canvas")
 function makeGrid() {
     c = 0;
