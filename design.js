@@ -11,6 +11,12 @@ for ( let r = 0; r < 20; r++){
     }
 }
 
+function drawSquare(x, y, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, SQ, SQ);
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(x, y, SQ, SQ);
+}
 
 const Z = [
     [[1, 1, 0], [0, 1, 1], [0, 0, 0]],
