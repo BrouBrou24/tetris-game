@@ -1,3 +1,4 @@
+const SQ = 20;
 var canvas = document.querySelector("#canvas")
 function makeGrid() {
     c = 0;
