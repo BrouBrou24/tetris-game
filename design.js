@@ -4,9 +4,9 @@ const SQ = 20;
 const EMPTY = "#FFF";
 let board = [ ];
 
-for ( let r = 0; r < 20; r++){
+for ( let r = 0; r < ROW; r++){
       board[r] = [ ];
-      for( let c = 0; c < 10; c++){
+      for( let c = 0; c < COLUMN; c++){
         board[r][c] = EMPTY;
     }
 }
