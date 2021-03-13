@@ -1,8 +1,8 @@
+const ROW = 20;
+const COLUMN = 10;
 const SQ = 20;
 const EMPTY = "#FFF";
 let board = [ ];
-const cvs = document.getElementById("tetris");
-const ctx = cvs.getContext("2d");
 
 for ( let r = 0; r < 20; r++){
       board[r] = [ ];
@@ -11,12 +11,17 @@ for ( let r = 0; r < 20; r++){
     }
 }
 
+
+const cvs = document.getElementById("tetris");
+const ctx = cvs.getContext("2d");
+
 function drawSquare(x, y, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, SQ, SQ);
     ctx.strokeStyle = "black";
     ctx.strokeRect(x, y, SQ, SQ);
 }
+
 
 const Z = [
     [[1, 1, 0], [0, 1, 1], [0, 0, 0]],
