@@ -28,3 +28,12 @@ function drawSquare(x, y, color) {
     ctx.strokeStyle = "black";
     ctx.strokeRect(x, y, SQ, SQ);
 }
+
+function Piece(Tetromino, color){
+    this.tetromino = tetromino;
+    this.tetrominoN = 0;
+    this.activeTetromino = this.tetromino[this.tetrominoN];
+    this.color = color;
+    this.x = 3;
+    this.y = -2;
+}
