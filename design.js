@@ -2,8 +2,8 @@ const ROW = 20;
 const COLUMN = 10;
 const SQ = 20;
 const EMPTY = "#FFF";
-let board = [ ];
 
+let board = [ ];
 for ( let r = 0; r < ROW; r++){
       board[r] = [ ];
       for( let c = 0; c < COLUMN; c++){
@@ -11,6 +11,13 @@ for ( let r = 0; r < ROW; r++){
     }
 }
 
+drawBoard() {
+    for (r = 0; r < ROW; r++) {
+        for (c = 0; c < COLUMN; c++){
+            drawSquare(c, r, board[r][c])
+        }
+    }
+}
 
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
