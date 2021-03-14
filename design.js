@@ -29,6 +29,16 @@ function drawSquare(x, y, color) {
     ctx.strokeRect(x, y, SQ, SQ);
 }
 
+Piece.prototype.draw = function() {
+    for (r = 0; r <this.activeTetromino.length; r++) {
+        for (c = 0; c < this.activeTetromino.length; c++){
+            if (this.activeTetromino[r][c]) {
+                drawSquare(this.x+c, this.y+r, this.color);
+            }
+        }
+    }
+}
+
 function Piece(Tetromino, color){
     this.tetromino = tetromino;
     this.tetrominoN = 0;
