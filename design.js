@@ -84,7 +84,22 @@ Piece.prototype.moveRight = function() {
 }
 
 Piece.prototype.rotate = function() {
-
+    let nextPattern = this.tetromino[(this.tetromino + 1) % this.tetromino.length];
+    let kick = 0;
+    if (this.collision(0, 0, nextPattern)) {
+        if (this.x > COLUMN/2) {
+            kick = -1;
+        }else{
+            kick = 1;
+        }
+    }
+    if (!this.collision(kick, 0, nextPattern)){
+        this.unDraw();
+        this.x += kick;
+        this.tetrominoN = (this.tetrominoN + 1) % this.tetromino.length;
+        this.activeTetromino = this.tetromino[this.tetrominoN];
+        this.draw();
+    }
 }
 
 Piece.prototype.collision = function(x, y, piece) {
