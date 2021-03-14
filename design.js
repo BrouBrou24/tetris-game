@@ -14,11 +14,11 @@ for ( let r = 0; r < ROW; r++){
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 
-function drawSquare(x, y, color) {
+function drawSquare(x*SQ, y*SQ, color) {
     ctx.fillStyle = color;
-    ctx.fillRect(x, y, SQ, SQ);
+    ctx.fillRect(x*SQ, y*SQ, SQ, SQ);
     ctx.strokeStyle = "black";
-    ctx.strokeRect(x, y, SQ, SQ);
+    ctx.strokeRect(x*SQ, y*SQ, SQ, SQ);
 }
 
 function drawBoard() {
