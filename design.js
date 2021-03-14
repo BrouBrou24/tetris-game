@@ -78,7 +78,7 @@ Piece.prototype.collision = function(x, y, piece) {
 }
 
 
-function Piece(Tetromino, color) {
+function Piece(tetromino, color) {
     this.tetromino = tetromino;
     this.tetrominoN = 0;
     this.activeTetromino = this.tetromino[this.tetrominoN];
