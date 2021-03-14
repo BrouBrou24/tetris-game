@@ -49,6 +49,12 @@ Piece.prototype.unDraw = function() {
     }
 }
 
+Piece.prototype.moveDown = function() {
+    this.unDraw();
+    this.y++;
+    this.draw();
+}
+
 function Piece(Tetromino, color){
     this.tetromino = tetromino;
     this.tetrominoN = 0;
