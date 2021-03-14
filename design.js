@@ -123,6 +123,14 @@ Piece.prototype.collision = function(x, y, piece) {
     return false;
 }
 
+const PIECES = [[Z, 'red'], [S, 'green'], [T, 'cyan'], [O, 'indigo'], [l, 'blue'], [L, 'purple'], [J, 'orange']]
+
+function randomPiece() {
+    let randomN = Math.floor(Math.random() * PIECES.length);
+    return new Piece(PIECES[randomN][0], PIECES[randomN][1]);
+}
+
+
 function CONTROL(event) {
     if (event.keycode == 37) {
         piece.moveLeft();
