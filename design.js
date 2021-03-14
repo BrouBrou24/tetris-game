@@ -66,9 +66,11 @@ Piece.prototype.moveLeft = function() {
 }
 
 Piece.prototype.moveRight = function() {
-    this.unDraw();
-    this.x++;
-    this.draw();
+    if (!this.collision(1, 0, this.activeTetromino)){
+        this.unDraw();
+        this.y++;
+        this.draw();
+    }
 }
 
 Piece.prototype.collision = function (x, y, piece)
