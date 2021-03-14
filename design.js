@@ -73,7 +73,8 @@ Piece.prototype.moveRight = function() {
     }
 }
 
-Piece.prototype.collision = function (x, y, piece)
+Piece.prototype.collision = function(x, y, piece) {
+}
 
 
 function Piece(Tetromino, color) {
