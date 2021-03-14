@@ -61,6 +61,12 @@ Piece.prototype.moveLeft = function() {
     this.draw();
 }
 
+Piece.prototype.moveRight = function() {
+    this.unDraw();
+    this.x++;
+    this.draw();
+}
+
 function Piece(Tetromino, color){
     this.tetromino = tetromino;
     this.tetrominoN = 0;
