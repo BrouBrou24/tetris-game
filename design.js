@@ -50,9 +50,11 @@ Piece.prototype.unDraw = function() {
 }
 
 Piece.prototype.moveDown = function() {
-    this.unDraw();
-    this.y++;
-    this.draw();
+    if (!this.collision(0, 1, this.activeTetromino)){
+        this.unDraw();
+        this.y++;
+        this.draw();
+    }
 }
 
 Piece.prototype.moveLeft = function() {
@@ -68,6 +70,7 @@ Piece.prototype.moveRight = function() {
 }
 
 Piece.prototype.collision = function (x, y, piece)
+
 
 function Piece(Tetromino, color){
     this.tetromino = tetromino;
