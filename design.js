@@ -41,7 +41,7 @@ function Piece(tetromino, color) {
 
 Piece.prototype.draw = function() {
     for (r = 0; r <this.activeTetromino.length; r++) {
-        for (c = 0; c < this.activeTetromino.length; c++){
+        for (c = 0; c < this.activeTetromino.length; c++) {
             if (this.activeTetromino[r][c]) {
                 drawSquare(this.x+c, this.y+r, this.color);
             }
@@ -64,6 +64,9 @@ Piece.prototype.moveDown = function() {
         this.unDraw();
         this.y++;
         this.draw();
+    }else{
+        this.lock();
+        piece = randomPiece();
     }
 }
 
@@ -131,6 +134,7 @@ function randomPiece() {
 }
 
 
+
 function CONTROL(event) {
     if (event.keycode == 37) {
         piece.moveLeft();
@@ -149,4 +153,4 @@ function CONTROL(event) {
 
 document.addEventListener("keydown", CONTROL);
 
-drawBoard()
+drawBoard();
