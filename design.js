@@ -83,7 +83,29 @@ Piece.prototype.moveRight = function() {
     }
 }
 
+Piece.prototype.rotate = function() {
+
+}
+
 Piece.prototype.collision = function(x, y, piece) {
+    for (r = 0; r < piece.length; r++) {
+        for (c = 0; c < piece.length; c++) {
+            if (!piece[r][c]) { continue; }
+
+            let newX = this.x + c + x;
+            let newY = this.y + r + y;
+
+            if (newX < 0 || newX >= COLUMN || newY > ROW) {
+                return true;
+            }
+
+            if (newY < 0) { continue; }
+            if (board[newY][newX] != EMPTY) {
+                return true
+            }
+        }
+    }
+    return false;
 }
 
 function CONTROL(event) {
