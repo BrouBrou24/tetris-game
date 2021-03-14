@@ -14,7 +14,7 @@ for ( let r = 0; r < ROW; r++){
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 
-function drawSquare(x*SQ, y*SQ, color) {
+function drawSquare(x, y, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x*SQ, y*SQ, SQ, SQ);
     ctx.strokeStyle = "black";
@@ -28,6 +28,7 @@ function drawBoard() {
         }
     }
 }
+
 
 Piece.prototype.draw = function() {
     for (r = 0; r <this.activeTetromino.length; r++) {
