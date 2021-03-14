@@ -11,7 +11,7 @@ for ( let r = 0; r < ROW; r++){
     }
 }
 
-drawBoard() {
+function drawBoard() {
     for (r = 0; r < ROW; r++) {
         for (c = 0; c < COLUMN; c++){
             drawSquare(c, r, board[r][c])
@@ -76,7 +76,7 @@ Piece.prototype.moveRight = function() {
 Piece.prototype.collision = function (x, y, piece)
 
 
-function Piece(Tetromino, color){
+function Piece(Tetromino, color) {
     this.tetromino = tetromino;
     this.tetrominoN = 0;
     this.activeTetromino = this.tetromino[this.tetrominoN];
