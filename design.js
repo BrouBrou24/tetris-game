@@ -11,14 +11,6 @@ for ( let r = 0; r < ROW; r++){
     }
 }
 
-function drawBoard() {
-    for (r = 0; r < ROW; r++) {
-        for (c = 0; c < COLUMN; c++){
-            drawSquare(c, r, board[r][c])
-        }
-    }
-}
-
 const cvs = document.getElementById("tetris");
 const ctx = cvs.getContext("2d");
 
@@ -27,6 +19,14 @@ function drawSquare(x, y, color) {
     ctx.fillRect(x, y, SQ, SQ);
     ctx.strokeStyle = "black";
     ctx.strokeRect(x, y, SQ, SQ);
+}
+
+function drawBoard() {
+    for (r = 0; r < ROW; r++) {
+        for (c = 0; c < COLUMN; c++){
+            drawSquare(c, r, board[r][c])
+        }
+    }
 }
 
 Piece.prototype.draw = function() {
@@ -85,3 +85,5 @@ function Piece(Tetromino, color) {
     this.x = 3;
     this.y = -2;
 }
+
+drawBoard()
