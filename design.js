@@ -86,5 +86,22 @@ Piece.prototype.moveRight = function() {
 Piece.prototype.collision = function(x, y, piece) {
 }
 
+function CONTROL(event) {
+    if (event.keycode == 37) {
+        piece.moveLeft();
+    }
+    else if (event.keycode == 38) {
+        piece.rotate();
+    }
+    else if (event.keycode == 39) {
+        piece.moveRight();
+    }
+    else if (event.keycode == 40) {
+        piece.moveDown();
+    }
+
+}
+
+document.addEventListener("keydown", CONTROL);
 
 drawBoard()
