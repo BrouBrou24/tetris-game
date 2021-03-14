@@ -39,6 +39,16 @@ Piece.prototype.draw = function() {
     }
 }
 
+Piece.prototype.unDraw = function() {
+    for (r = 0; r <this.activeTetromino.length; r++) {
+        for (c = 0; c < this.activeTetromino.length; c++){
+            if (this.activeTetromino[r][c]) {
+                drawSquare(this.x+c, this.y+r, EMPTY);
+            }
+        }
+    }
+}
+
 function Piece(Tetromino, color){
     this.tetromino = tetromino;
     this.tetrominoN = 0;
