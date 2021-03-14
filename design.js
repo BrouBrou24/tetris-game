@@ -30,6 +30,15 @@ function drawBoard() {
 }
 
 
+function Piece(tetromino, color) {
+    this.tetromino = tetromino;
+    this.tetrominoN = 0;
+    this.activeTetromino = this.tetromino[this.tetrominoN];
+    this.color = color;
+    this.x = 3;
+    this.y = -2;
+}
+
 Piece.prototype.draw = function() {
     for (r = 0; r <this.activeTetromino.length; r++) {
         for (c = 0; c < this.activeTetromino.length; c++){
@@ -77,14 +86,5 @@ Piece.prototype.moveRight = function() {
 Piece.prototype.collision = function(x, y, piece) {
 }
 
-
-function Piece(tetromino, color) {
-    this.tetromino = tetromino;
-    this.tetrominoN = 0;
-    this.activeTetromino = this.tetromino[this.tetrominoN];
-    this.color = color;
-    this.x = 3;
-    this.y = -2;
-}
 
 drawBoard()
