@@ -67,6 +67,8 @@ Piece.prototype.moveRight = function() {
     this.draw();
 }
 
+Piece.prototype.collision = function (x, y, piece)
+
 function Piece(Tetromino, color){
     this.tetromino = tetromino;
     this.tetrominoN = 0;
