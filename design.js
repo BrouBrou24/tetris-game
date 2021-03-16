@@ -126,6 +126,8 @@ Piece.prototype.collision = function(x, y, piece) {
     return false;
 }
 
+let score = 0
+
 Piece.prototype.lock = function() {
     for (r = 0; r <this.activeTetromino.length; r++) {
         for (c = 0; c < this.activeTetromino.length; c++) {
