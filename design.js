@@ -167,6 +167,20 @@ function randomPiece() {
     return new Piece(PIECES[randomN][0], PIECES[randomN][1]);
 }
 
+let dropStart = Date.now();
+let gameOver = false
+
+function drop() {
+    let now = Date.now();
+    let delta = now - dropStart;
+    if (delta > 1000) {
+        piece.moveDown();
+        dropStart = Date.now();
+    }
+    if (!gameOver) {
+        requestAnimationFrame(drop);
+    }
+}
 
 
 function CONTROL(event) {
@@ -188,3 +202,4 @@ function CONTROL(event) {
 document.addEventListener("keydown", CONTROL);
 
 drawBoard();
+
