@@ -140,6 +140,24 @@ Piece.prototype.lock = function() {
             board[this.y + r][this.x + c] = this.color;
         }
     }
+    for (r = 0; r < ROW; r++) {
+        let isRowFull = true;
+        for (c = 0; c < COLUMN; c++) {
+            isRowFull = isRowFull && [board[r][c] != EMPTY];
+        }
+        if (isRowFull) {
+            for (y = r; y > 1; y--) {
+                for (c = 0; c < COLUMN; c++) {
+                    board[y][c] = board[y-1][c];
+                }
+            }
+            for (c = 0; c < COLUMN; c++) {
+                board[0][c] = EMPTY;
+            }
+            score += 10;
+        }
+    }
+    drawBoard();
 }
 
 const PIECES = [[Z, 'red'], [S, 'green'], [T, 'cyan'], [O, 'indigo'], [l, 'blue'], [L, 'purple'], [J, 'orange']]
