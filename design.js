@@ -192,23 +192,20 @@ function drop() {
     }
 }
 
-
-function CONTROL(event) {
-    if (event.keycode == 37) {
+document.addEventListener('keydown', function() {
+    if (event.keyCode == 37) {
         piece.moveLeft();
     }
-    else if (event.keycode == 38) {
+    else if (event.keyCode == 38) {
         piece.rotate();
     }
-    else if (event.keycode == 39) {
+    else if (event.keyCode == 39) {
         piece.moveRight();
     }
-    else if (event.keycode == 40) {
+    else if (event.keyCode == 40) {
         piece.moveDown();
     }
+});
 
-}
-
-document.addEventListener("keydown", CONTROL);
 
 drawBoard();
