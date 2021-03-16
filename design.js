@@ -162,7 +162,15 @@ Piece.prototype.lock = function() {
     drawBoard();
 }
 
-const PIECES = [[Z, 'red'], [S, 'green'], [T, 'cyan'], [O, 'indigo'], [l, 'blue'], [L, 'purple'], [J, 'orange']]
+const PIECES = [
+    [Z, 'red'],
+    [S, 'green'],
+    [T, 'cyan'],
+    [O, 'indigo'],
+    [l, 'blue'],
+    [L, 'purple'],
+    [J, 'orange']
+    ]
 
 function randomPiece() {
     let randomN = Math.floor(Math.random() * PIECES.length);
@@ -204,4 +212,3 @@ function CONTROL(event) {
 document.addEventListener("keydown", CONTROL);
 
 drawBoard();
-
