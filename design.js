@@ -73,7 +73,7 @@ Piece.prototype.moveDown = function() {
 Piece.prototype.moveLeft = function() {
     if (!this.collision(-1, 0, this.activeTetromino)){
         this.unDraw();
-        this.y++;
+        this.x--;
         this.draw();
     }
 }
@@ -81,7 +81,7 @@ Piece.prototype.moveLeft = function() {
 Piece.prototype.moveRight = function() {
     if (!this.collision(1, 0, this.activeTetromino)){
         this.unDraw();
-        this.y++;
+        this.x++;
         this.draw();
     }
 }
