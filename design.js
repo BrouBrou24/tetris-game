@@ -124,6 +124,7 @@ Piece.prototype.collision = function(x, y, piece) {
     return false;
 }
 
+const totalScore = document.getElementById("score")
 let score = 0
 
 Piece.prototype.lock = function() {
@@ -158,6 +159,7 @@ Piece.prototype.lock = function() {
         }
     }
     drawBoard();
+    totalScore.innerHTML = score;
 }
 
 const PIECES = [
