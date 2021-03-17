@@ -1,6 +1,6 @@
 const ROW = 20;
 const COLUMN = 10;
-const SQ = 20;
+const SQ = 30;
 const EMPTY = "#FFF";
 
 let board = [ ];
