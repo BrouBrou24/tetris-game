@@ -12,3 +12,8 @@ div {
     font-weight: bold;
     font-size: 25px;
 }
+
+#signature {
+    float: right;
+    font-size: 15px;
+}
