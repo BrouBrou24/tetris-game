@@ -143,7 +143,7 @@ Piece.prototype.lock = function() {
     for (r = 0; r < ROW; r++) {
         let isRowFull = true;
         for (c = 0; c < COLUMN; c++) {
-            isRowFull = isRowFull && [board[r][c] != EMPTY];
+            isRowFull = isRowFull && (board[r][c] != EMPTY);
         }
         if (isRowFull) {
             for (y = r; y > 1; y--) {
@@ -176,7 +176,7 @@ function randomPiece() {
 }
 
 let dropStart = Date.now();
-let gameOver = false
+let gameOver = false;
 
 function drop() {
     let now = Date.now();
@@ -207,6 +207,6 @@ document.addEventListener('keydown', function() {
 
 
 drawBoard();
-let piece = new Piece(Z, 'red');
+let piece = randomPiece();
 piece.draw();
 drop();
