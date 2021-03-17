@@ -39,24 +39,22 @@ function Piece(tetromino, color) {
     this.y = -2;
 }
 
-Piece.prototype.draw = function() {
+Piece.prototype.fill = function(color) {
     for (r = 0; r <this.activeTetromino.length; r++) {
         for (c = 0; c < this.activeTetromino.length; c++) {
             if (this.activeTetromino[r][c]) {
-                drawSquare(this.x+c, this.y+r, this.color);
+                drawSquare(this.x+c, this.y+r, color);
             }
         }
     }
 }
 
+Piece.prototype.draw = function() {
+    this.fill(this.color)
+}
+
 Piece.prototype.unDraw = function() {
-    for (r = 0; r <this.activeTetromino.length; r++) {
-        for (c = 0; c < this.activeTetromino.length; c++){
-            if (this.activeTetromino[r][c]) {
-                drawSquare(this.x+c, this.y+r, EMPTY);
-            }
-        }
-    }
+    this.fill(EMPTY)
 }
 
 Piece.prototype.moveDown = function() {
@@ -87,9 +85,9 @@ Piece.prototype.moveRight = function() {
 }
 
 Piece.prototype.rotate = function() {
-    let nextPattern = this.tetromino[(this.tetromino + 1) % this.tetromino.length];
+    let nextPattern = this.tetromino[(this.tetrominoN + 1) % this.tetromino.length];
     let kick = 0;
-    if (this.collision(0, 0, nextPattern)) {
+    if (!this.collision(0, 0, nextPattern)) {
         if (this.x > COLUMN/2) {
             kick = -1;
         }else{
@@ -113,13 +111,13 @@ Piece.prototype.collision = function(x, y, piece) {
             let newX = this.x + c + x;
             let newY = this.y + r + y;
 
-            if (newX < 0 || newX >= COLUMN || newY > ROW) {
+            if (newX < 0 || newX >= COLUMN || newY >= ROW) {
                 return true;
             }
 
             if (newY < 0) { continue; }
             if (board[newY][newX] != EMPTY) {
-                return true
+                return true;
             }
         }
     }
@@ -209,3 +207,6 @@ document.addEventListener('keydown', function() {
 
 
 drawBoard();
+let piece = new Piece(Z, 'red');
+piece.draw();
+drop();
