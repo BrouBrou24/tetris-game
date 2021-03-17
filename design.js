@@ -164,7 +164,7 @@ const PIECES = [
     [Z, 'red'],
     [S, 'green'],
     [T, 'cyan'],
-    [O, 'indigo'],
+    [O, 'pink'],
     [l, 'blue'],
     [L, 'purple'],
     [J, 'orange']
