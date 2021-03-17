@@ -203,6 +203,7 @@ document.addEventListener('keydown', function() {
     else if (event.keyCode == 40) {
         piece.moveDown();
     }
+    dropStart = Date.now();
 });
 
 
